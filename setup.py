@@ -43,6 +43,7 @@ setup(
         "pandas>=1.2.4",
         "Pillow>=8.3.1",
         "poppy>=1.0.1",
+        "setuptools==59.8.0" #Changed to be less than 60.0 because numpy.distutils is deprecated after that
         "scikit-image",
         "scikit-learn>=1.0.2",
         "scipy>=1.6.2",
