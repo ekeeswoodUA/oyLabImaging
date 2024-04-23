@@ -39,7 +39,7 @@ setup(
         "magicgui",
         "nd2>=0.8.0",
         "numba>=0.53.1",
-        "numpy",
+        "numpy==1.22.4",#changed to be less than 1.23.0 beacuse numpy.distutils has deprecated after 1.23.0
         "pandas>=1.2.4",
         "Pillow>=8.3.1",
         "poppy>=1.0.1",
