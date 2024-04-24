@@ -32,18 +32,18 @@ setup(
         "dill>=0.3.4",
         "ipython>=7.27.0",
         "ipywidgets>=7.6.5",
-        "lap05",
+        #"lap05", commenting out because lap05 relies on numpy.distutils. Hopefully the overall code doesn't rely on it too much
         "matplotlib>=3.3.4",
         "napari[pyqt5]>=0.4.14",
         "pydantic<2", # pinned only because of napari
         "magicgui",
         "nd2>=0.8.0",
         "numba>=0.53.1",
-        "numpy==1.22.4",#changed to be less than 1.23.0 beacuse numpy.distutils has deprecated after 1.23.0
+        "numpy>=1.22.4",#changed to be less than 1.23.0 beacuse numpy.distutils has deprecated after 1.23.0
         "pandas>=1.2.4",
         "Pillow>=8.3.1",
         "poppy>=1.0.1",
-        "setuptools==59.8.0", #Changed to be less than 60.0 because numpy.distutils is deprecated after that
+        "setuptools>=59.8.0", #Changed to be less than 60.0 because numpy.distutils is deprecated after that
         "scikit-image",
         "scikit-learn>=1.0.2",
         "scipy>=1.6.2",
