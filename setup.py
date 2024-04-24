@@ -33,6 +33,7 @@ setup(
         "ipython>=7.27.0",
         "ipywidgets>=7.6.5",
         #"lap05", commenting out because lap05 relies on numpy.distutils. Hopefully the overall code doesn't rely on it too much
+        "lap", #instead of lap05 I'm attempting to use lap
         "matplotlib>=3.3.4",
         "napari[pyqt5]>=0.4.14",
         "pydantic<2", # pinned only because of napari
