@@ -5,7 +5,7 @@
 
 import sys
 from functools import partial
-import warnings
+import warnings 
 
 import lap
 import multiprocess as mp  # import Pool, set_start_method
@@ -497,7 +497,9 @@ class PosLbl(object):
         nums = self.num
         if 'adaptive_radius' in kwargs:
             adaptive=True
-            sr_factor = np.sqrt(self.num/self.num[0])
+            #print([np.sqrt(i) for i in self.num/self.num[0]]) #Woody debug print
+            sr_factor = [np.sqrt(i) for i in self.num/self.num[0]] #Woody added+
+            #sr_factor = np.sqrt(np.array(self.num/self.num[0])) #Woody comment out #original is sr_factor = np.sqrt(self.num/self.num[0])
         else:
             adaptive=False
             
@@ -668,10 +670,10 @@ class PosLbl(object):
         while notdoneflag:
 
             trackstarts = np.array(
-                [np.where(~np.isnan(r.astype("float")))[0][0] for r in trackbits]
+                [np.where(~np.isnan(r.astype("float")))[0][0] for r in trackbits]#,dtype=object Woody edit
             )
             trackends = np.array(
-                [np.where(~np.isnan(r.astype("float")))[0][-1] for r in trackbits]
+                [np.where(~np.isnan(r.astype("float")))[0][-1] for r in trackbits]#,dtype=object Woody edit
             )
 
             dtmat = np.expand_dims(trackstarts, 1) - np.expand_dims(trackends, 0)
@@ -806,9 +808,9 @@ class PosLbl(object):
                 [np.where(~np.isnan(r.astype("float")))[0][0] for r in trackbits]
             )
             trackends = np.array(
-                [np.where(~np.isnan(r.astype("float")))[0] for r in trackbits]
+                [np.where(~np.isnan(r.astype("float")))[0][-1] for r in trackbits]
             )
-
+            
             possiblelinks = np.empty((0, 2), int)
             for J in np.unique(trackstarts):
                 link_a = np.where(trackstarts == J)
