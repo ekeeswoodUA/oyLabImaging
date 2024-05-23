@@ -46,6 +46,7 @@ setup(
         "scikit-image",
         "scikit-learn==1.0.2",
         "scipy>=1.6.2",
+        "seaborn", #Adding for Woody's heatmap code
         "tqdm>=4.59.0",
         "zernike>=0.0.32",
         "multiprocess>=0.70",
